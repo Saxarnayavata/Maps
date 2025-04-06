@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Карты Житопóля</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <a href="https://t.me/tglyph" class="script-team" target="_blank">by ScriptTeam</a>
+
+    <div class="page-title" id="pageTitle">Карта 1</div>
+
+    <div id="screen1" class="screen active" data-title="Карта 1">
+        <div class="image-container">
+            <img class="image" src="IMG_1019.jpg" alt="Карта 1">
+        </div>
+        <div class="zoom-buttons">
+            <button onclick="zoomIn()" aria-label="Приблизить">+</button>
+            <button onclick="zoomOut()" aria-label="Отдалить">-</button>
+            <button onclick="resetZoom()" aria-label="Сбросить">↻</button>
+        </div>
+    </div>
+
+    <div id="screen2" class="screen" data-title="Карта 2">
+        <div class="image-container">
+            <img class="image" src="IMG_1017.jpg" alt="Карта 2">
+        </div>
+        <div class="zoom-buttons">
+            <button onclick="zoomIn()" aria-label="Приблизить">+</button>
+            <button onclick="zoomOut()" aria-label="Отдалить">-</button>
+            <button onclick="resetZoom()" aria-label="Сбросить">↻</button>
+        </div>
+    </div>
+
+    <div class="nav-buttons">
+        <button onclick="showScreen('screen1')">Карта 1</button>
+        <button onclick="showScreen('screen2')">Карта 2</button>
+    </div>
+</body>
+<script src="app.js"></script>
+</html>

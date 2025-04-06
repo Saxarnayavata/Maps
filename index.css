@@ -1,0 +1,175 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    overflow: hidden;
+    background-color: #000;
+    user-select: none;
+    touch-action: none;
+}
+
+@media (hover: none) and (pointer: coarse) {
+    .zoom-buttons button:not(:last-child) {
+        display: none;
+    }
+}
+
+.page-title {
+    position: fixed;
+    top: 10px;
+    left: 20px;
+    font-size: 1.5em;
+    color: #fff;
+    z-index: 10;
+    transition: opacity 0.3s ease;
+    opacity: 1;
+}
+
+.nav-buttons {
+    transition: opacity 0.3s ease;
+    opacity: 1;
+}
+
+.zoom-buttons {
+    transition: opacity 0.3s ease;
+    opacity: 1;
+}
+
+.screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: none;
+    background-color: black;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.screen.active {
+    display: block;
+    opacity: 1;
+}
+
+.image-container {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: grab;
+}
+
+.image-container.grabbing {
+    cursor: grabbing;
+}
+
+.image {
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    max-height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    transform-origin: center center;
+    object-fit: contain;
+    transition: transform 0.2s ease-out;
+}
+
+.nav-buttons {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+}
+
+.nav-buttons button {
+    background-color: rgba(255, 255, 255, 0.3);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.2s ease;
+}
+
+.nav-buttons button:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.zoom-buttons {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 10;
+}
+
+.zoom-buttons button {
+    background-color: rgba(255, 255, 255, 0.3);
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    margin: 0 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.8em;
+    min-width: 30px;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .zoom-buttons {
+        bottom: 10px;
+        right: 10px;
+    }
+    .zoom-buttons button {
+        padding: 10px 15px;
+        font-size: 1.2em;
+        margin: 0 3px;
+    }
+    .nav-buttons {
+        bottom: 10px;
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 10px;
+    }
+    .nav-buttons button {
+        padding: 8px 15px;
+        margin: 0 5px;
+        font-size: 0.9em;
+    }
+}
+
+.script-team {
+    position: fixed;
+    left: 10px;
+    bottom: 20px;
+    transform: rotate(-90deg);
+    transform-origin: left center;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 14px;
+    text-decoration: none;
+    z-index: 10;
+    padding: 5px 0;
+    white-space: nowrap;
+    transition: 0.15s color ease-in-out;
+}
+.script-team:hover {
+    color: rgba(255, 255, 255, 0.7);
+    transition: 0.15s color ease-in-out;
+}
+
+@media (max-width: 768px) {
+    .script-team {
+        font-size: 12px;
+        left: 5px;
+        bottom: 15px;
+    }
+}
